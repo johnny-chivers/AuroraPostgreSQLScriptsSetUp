@@ -1,11 +1,3 @@
--- drop database if exists
-DROP DATABASE IF EXISTS Music; 
-
--- create database music 
-CREATE database Music; 
-
--- user database music 
-USE Music; 
 
 -- Drop tables if they exists 
 DROP TABLE IF EXISTS song; 
@@ -27,7 +19,7 @@ INSERT INTO artist VALUES
 
 -- create song table
 CREATE TABLE song(
-	Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT 
+	Id SERIAL NOT NULL 
 	,ArtistId INT 
 	,Song VARCHAR(100)
 	,FOREIGN KEY (ArtistId) REFERENCES artist(ID)
@@ -35,15 +27,11 @@ CREATE TABLE song(
 
 -- insert songs 
 INSERT INTO song (ArtistId ,Song )VALUES 
-( 1, "Jumping Jack flash")
-,(1, "Start Me UP")
-,(2, "In Bloom")
-,(2, "Heart Shaped Box")
-,(3, "I Will Wait"); 
-
-
-
-
+( 1, 'Jumping Jack flash')
+,(1, 'Start Me UP')
+,(2, 'In Bloom')
+,(2, 'Heart Shaped Box')
+,(3, 'I Will Wait'); 
 
 
 
